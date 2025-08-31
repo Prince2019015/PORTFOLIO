@@ -5,7 +5,7 @@ import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 const Hero = () => {
   const [displayedText, setDisplayedText] = useState('');
   const fullText = "I'm a Full Stack Developer";
-  
+
   useEffect(() => {
     let i = 0;
     const typingInterval = setInterval(() => {
@@ -16,10 +16,9 @@ const Hero = () => {
         clearInterval(typingInterval);
       }
     }, 100);
-    
+
     return () => clearInterval(typingInterval);
   }, []);
-
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
@@ -44,15 +43,28 @@ const Hero = () => {
         </div>
 
         <p className="text-xl text-slate-400 max-w-2xl mx-auto mb-12 animate-slideInFromBottom">
-          Crafting beautiful, functional, and user-centered digital experiences with modern technologies.
+          Crafting beautiful, functional, and user-centered digital experiences
+          with modern technologies.
         </p>
 
         {/* Social Links */}
         <div className="flex justify-center space-x-6 mb-12 animate-slideInFromBottom delay-200">
           {[
-            { Icon: Github, href: "https://github.com/Prince2019015", label: "GitHub" },
-            { Icon: Linkedin, href: "https://www.linkedin.com/in/prince-kumar-93b86a22a/", label: "LinkedIn" },
-            { Icon: Mail, href: "mailto:princekumar27124@gmail.com", label: "Email" }
+            {
+              Icon: Github,
+              href: 'https://github.com/Prince2019015',
+              label: 'GitHub',
+            },
+            {
+              Icon: Linkedin,
+              href: 'https://www.linkedin.com/in/prince-kumar-93b86a22a/',
+              label: 'LinkedIn',
+            },
+            {
+              Icon: Mail,
+              href: 'mailto:princekumar27124@gmail.com',
+              label: 'Email',
+            },
           ].map(({ Icon, href, label }) => (
             <a
               key={label}
@@ -71,12 +83,15 @@ const Hero = () => {
           className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-orange-600 text-white rounded-full font-semibold hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105 animate-slideInFromBottom delay-300"
         >
           View My Work
-          <ChevronDown className="inline ml-2 group-hover:translate-y-1 transition-transform duration-300" size={20} />
+          <ChevronDown
+            className="inline ml-2 group-hover:translate-y-1 transition-transform duration-300"
+            size={20}
+          />
         </Link>
       </div>
 
       {/* Scroll indicator */}
-      <Link 
+      <Link
         to="/about"
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hover:text-purple-400 transition-colors duration-300"
       >

@@ -3,7 +3,11 @@ import { Mail, MapPin, Phone, Send, CheckCircle } from 'lucide-react';
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
@@ -28,62 +32,71 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
       setFormData({ name: '', email: '', message: '' });
-      
+
       setTimeout(() => setIsSubmitted(false), 3000);
     }, 2000);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const contactInfo = [
     {
       icon: Mail,
-      title: "Email",
-      content: "princekumar27124@gmail.com",
-      href: "mailto:princekumar27124@gmail.com"
+      title: 'Email',
+      content: 'princekumar27124@gmail.com',
+      href: 'mailto:princekumar27124@gmail.com',
     },
     {
       icon: Phone,
-      title: "Phone",
-      content: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      title: 'Phone',
+      content: '+91 7319974523',
+      href: 'tel:+91 7319974523',
     },
     {
       icon: MapPin,
-      title: "Location",
-      content: "San Francisco, CA",
-      href: "#"
-    }
+      title: 'Location',
+      content: 'Dehradun, India',
+      href: '#',
+    },
   ];
 
   return (
     <section id="contact" ref={sectionRef} className="py-20 bg-slate-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-16 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <div
+          className={`text-center mb-16 transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Let's Work Together
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-orange-500 mx-auto mb-6"></div>
           <p className="text-slate-300 text-lg max-w-2xl mx-auto">
-            Have a project in mind? I'd love to hear about it. Let's discuss how we can bring your ideas to life.
+            Have a project in mind? I'd love to hear about it. Let's discuss how
+            we can bring your ideas to life.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <div className={`transition-all duration-1000 delay-200 ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-          }`}>
+          <div
+            className={`transition-all duration-1000 delay-200 ${
+              isVisible
+                ? 'opacity-100 translate-x-0'
+                : 'opacity-0 -translate-x-10'
+            }`}
+          >
             <h3 className="text-2xl font-bold text-white mb-8">Get In Touch</h3>
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
@@ -96,7 +109,9 @@ const Contact = () => {
                     <info.icon className="w-6 h-6 text-white" />
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-white">{info.title}</h4>
+                    <h4 className="text-lg font-semibold text-white">
+                      {info.title}
+                    </h4>
                     <p className="text-slate-300">{info.content}</p>
                   </div>
                 </a>
@@ -104,7 +119,9 @@ const Contact = () => {
             </div>
 
             <div className="mt-12">
-              <h4 className="text-lg font-semibold text-white mb-4">Why work with me?</h4>
+              <h4 className="text-lg font-semibold text-white mb-4">
+                Why work with me?
+              </h4>
               <ul className="space-y-3 text-slate-300">
                 <li className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
@@ -127,12 +144,19 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className={`transition-all duration-1000 delay-400 ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-          }`}>
+          <div
+            className={`transition-all duration-1000 delay-400 ${
+              isVisible
+                ? 'opacity-100 translate-x-0'
+                : 'opacity-0 translate-x-10'
+            }`}
+          >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-slate-300 mb-2"
+                >
                   Name
                 </label>
                 <input
@@ -148,7 +172,10 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-slate-300 mb-2"
+                >
                   Email
                 </label>
                 <input
@@ -164,7 +191,10 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-slate-300 mb-2"
+                >
                   Message
                 </label>
                 <textarea

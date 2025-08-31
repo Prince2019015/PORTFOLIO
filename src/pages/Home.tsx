@@ -108,7 +108,7 @@ const Home = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full p-1">
                 <div className="w-full h-full bg-slate-900 rounded-full overflow-hidden">
                   <img
-                    src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    src="mypic3.jpeg"
                     alt="Prince Kumar - Full Stack Developer"
                     className="w-full h-full object-cover"
                   />
@@ -132,7 +132,7 @@ const Home = () => {
               <div className="absolute -bottom-4 -right-4 bg-slate-800/90 backdrop-blur-sm border border-slate-700 rounded-lg p-3 animate-bounce delay-1000">
                 <div className="flex items-center space-x-2">
                   <span className="text-slate-300 text-sm font-medium">
-                    5+ Years Experience
+                    Ex-Intern @ ONGC
                   </span>
                   <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
                 </div>

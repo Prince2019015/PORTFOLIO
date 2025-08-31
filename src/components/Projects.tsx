@@ -25,79 +25,121 @@ const Projects = () => {
 
   const projects = [
     {
+      id: 5,
+      title: 'Government Exam Portal',
+      description:
+        'A **Full Stack EdTech platform** for UPSC/SSC exam preparation with mock tests, CBT system, and structured question banks.',
+      image: 'government.png',
+      technologies: [
+        'HTML',
+        'CSS',
+        'javascript',
+        'Typescript',
+        'Supabase(Database)',
+      ],
+      github:
+        'https://github.com/Prince2019015/Government-Exam-Portal---PrinceKumar',
+      live: 'https://government-exam-portal-prince-kumar.vercel.app/',
+      category: 'Full Stack Development',
+    },
+    {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.",
-      image: "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "Tailwind CSS"],
-      github: "#",
-      live: "#",
-      category: "Full Stack"
+      title: 'E-Commerce Platform',
+      description:
+        'A full-stack e-commerce solution with React, Node.js, Express.js and MongoDB. Features include user authentication, payment processing, and admin dashboard.',
+      image: 'e-commerce.png',
+      technologies: [
+        'HTML',
+        'CSS',
+        'javascript',
+        'React',
+        'Node.js',
+        'MongoDB',
+        'Paypal',
+        'Tailwind CSS',
+      ],
+      github: 'https://github.com/Prince2019015/amazonax',
+      live: 'https://amazonax.vercel.app/',
+      category: 'Full Stack',
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["Vue.js", "Socket.io", "MongoDB", "Express.js"],
-      github: "#",
-      live: "#",
-      category: "Frontend"
+      title: 'Smartpath : Learning Management System ',
+      description:
+        'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
+      image: 'smartpath.png',
+      technologies: [
+        'HTML',
+        'CSS',
+        'javascript',
+        'Typescript',
+        'Supabase(Database)',
+        'KNN - Machine Learning Algorithm',
+      ],
+      github:
+        'https://github.com/Prince2019015/SmartPath-Learning-Management-System',
+      live: 'https://smartpathlms.vercel.app/',
+      category: 'Machine Learning Based Full Stack',
     },
     {
       id: 3,
-      title: "Analytics Dashboard",
-      description: "A comprehensive analytics dashboard with data visualization, real-time charts, and customizable reporting features for business insights.",
-      image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "D3.js", "Python", "Flask", "Redis"],
-      github: "#",
-      live: "#",
-      category: "Data Visualization"
+      title: 'Forecast-daily-bike-rental-demand-using-time-series-models ',
+      description:
+        'A comprehensive analytics dashboard with data visualization, real-time charts, and customizable reporting features for business insights.',
+      image: 'dataanalysis.png',
+      technologies: ['R programming'],
+      github:
+        'https://github.com/Prince2019015/Forecast-daily-bike-rental-demand-using-time-series-models',
+      live: 'https://github.com/Prince2019015/Forecast-daily-bike-rental-demand-using-time-series-models',
+      category: 'Data Visualization, Data Analysis',
     },
     {
       id: 4,
-      title: "Social Media API",
-      description: "A RESTful API for a social media platform with authentication, post management, real-time messaging, and content moderation.",
-      image: "https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["Node.js", "GraphQL", "MongoDB", "Redis", "AWS"],
-      github: "#",
-      live: "#",
-      category: "Backend"
+      title: 'Quiz Application',
+      description:
+        'A RESTful API for a social media platform with authentication, post management, real-time messaging, and content moderation.',
+      image: 'quizapp.png',
+      technologies: [
+        'HTML',
+        'CSS',
+        'javascript',
+        'react.js',
+        'opentrivia Database API',
+      ],
+      github: 'https://github.com/Prince2019015/Quiz-Application',
+      live: 'https://quiz-application-two-sage.vercel.app/',
+      category: 'Frontend',
     },
-    {
-      id: 5,
-      title: "AI-Powered Blog",
-      description: "A modern blog platform with AI-powered content suggestions, automatic SEO optimization, and advanced content management features.",
-      image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["Next.js", "OpenAI API", "Prisma", "PostgreSQL"],
-      github: "#",
-      live: "#",
-      category: "AI Integration"
-    },
+
     {
       id: 6,
-      title: "Mobile Fitness App",
-      description: "A cross-platform mobile app for fitness tracking with workout plans, progress analytics, and social features for motivation.",
-      image: "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React Native", "Firebase", "Redux", "Native Base"],
-      github: "#",
-      live: "#",
-      category: "Mobile"
-    }
+      title: 'TIk-Talk app',
+      description:
+        'A cross-platform mobile app for fitness tracking with workout plans, progress analytics, and social features for motivation.',
+      image:
+        'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=800',
+      technologies: ['React Native', 'Firebase', 'Redux', 'Native Base'],
+      github: '#',
+      live: '#',
+      category: 'Mobile',
+    },
   ];
 
   return (
     <section id="projects" ref={sectionRef} className="py-20 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-16 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <div
+          className={`text-center mb-16 transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Featured Projects
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-orange-500 mx-auto mb-6"></div>
           <p className="text-slate-300 text-lg max-w-2xl mx-auto">
-            A collection of projects that showcase my skills and passion for creating innovative solutions
+            A collection of projects that showcase my skills and passion for
+            creating innovative solutions
           </p>
         </div>
 
@@ -106,7 +148,9 @@ const Projects = () => {
             <div
               key={project.id}
               className={`group bg-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 hover:scale-105 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                isVisible
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
@@ -181,9 +225,9 @@ const Projects = () => {
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-slate-800 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             {(() => {
-              const project = projects.find(p => p.id === selectedProject);
+              const project = projects.find((p) => p.id === selectedProject);
               if (!project) return null;
-              
+
               return (
                 <div>
                   <div className="relative">
@@ -200,10 +244,14 @@ const Projects = () => {
                     </button>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-2xl font-bold text-white mb-4">{project.title}</h3>
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                      {project.title}
+                    </h3>
                     <p className="text-slate-300 mb-6">{project.description}</p>
                     <div className="mb-6">
-                      <h4 className="text-lg font-semibold text-white mb-2">Technologies Used:</h4>
+                      <h4 className="text-lg font-semibold text-white mb-2">
+                        Technologies Used:
+                      </h4>
                       <div className="flex flex-wrap gap-2">
                         {project.technologies.map((tech) => (
                           <span
