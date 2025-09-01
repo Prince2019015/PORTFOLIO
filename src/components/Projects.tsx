@@ -113,14 +113,14 @@ const Projects = () => {
 
     {
       id: 6,
-      title: 'TIk-Talk app',
+      title: 'Food Ordering Application Prototype',
       description:
         'A cross-platform mobile app for fitness tracking with workout plans, progress analytics, and social features for motivation.',
-      image:
-        'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React Native', 'Firebase', 'Redux', 'Native Base'],
-      github: '#',
-      live: '#',
+      image: 'foodapp.jpeg',
+      technologies: ['Adobe XD'],
+      github:
+        'https://xd.adobe.com/view/80a37684-42d0-4a83-a427-65206b91ac2a-d5f0/',
+      live: 'https://xd.adobe.com/view/80a37684-42d0-4a83-a427-65206b91ac2a-d5f0/',
       category: 'Mobile',
     },
   ];

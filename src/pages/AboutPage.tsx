@@ -308,25 +308,807 @@
 
 // export default AboutPage;
 
-import React from 'react';
-import { useState } from 'react';
+// import React from 'react';
+// import { useState } from 'react';
+// import { Eye, Download, X } from 'lucide-react';
+// import About from '../components/About';
+
+// const AboutPage = () => {
+//   const [selectedCertificate, setSelectedCertificate] = useState<any>(null);
+
+//   const certificates = [
+//     {
+//       id: 1,
+//       title: 'KPMG AU - Data	Analytics	Consulting	Virtual	Internship',
+//       issuer: 'Forage',
+//       date: '06/2024',
+//       description:
+//         'Completed a virtual job simulation with KPMG Australia’s Data, Analytics & Modelling team, focusing on data quality assessment, customer segmentation, and dashboard creation to deliver actionable insights',
+//       color: 'text-blue-300',
+//       image:
+//         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/KPMG%20AU/m7W4GMqeT3bh9Nb2c_KPMG%20AU_NKMsmXaNyodYNnmXP_1718307708994_completion_certificate.pdf',
+//       certificateUrl:
+//         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/KPMG%20AU/m7W4GMqeT3bh9Nb2c_KPMG%20AU_NKMsmXaNyodYNnmXP_1718307708994_completion_certificate.pdf',
+//     },
+//     {
+//       id: 2,
+//       title: 'Google Data Analytics Professional Certificate',
+//       issuer: 'Coursera',
+//       date: '2024',
+//       description:
+//         'Completed an 8-course program covering data collection, cleaning, analysis, visualization, and R programming with a capstone case study.',
+//       color: 'text-orange-300',
+//       image:
+//         'https://drive.google.com/file/d/1Me70Lqzm8RTAmP2n06JagrOnMuIJP_U6/view?usp=drivesdk',
+//       certificateUrl:
+//         'https://drive.google.com/file/d/1Me70Lqzm8RTAmP2n06JagrOnMuIJP_U6/view?usp=drivesdk',
+//     },
+
+//     {
+//       id: 3,
+//       title: 'AWS - Solutions Architecture Job Simulation',
+//       issuer: 'Forage',
+//       date: '08/2025',
+//       description:
+//         'Completed AWS APAC Solutions Architecture virtual experience program on Forage, where I designed a scalable hosting architecture using Elastic Beanstalk for a high-growth client and communicated the solution with clear cost analysis.',
+//       color: 'text-green-300',
+//       image:
+//         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/pmnMSL4QiQ9JCgE3W/kkE9HyeNcw6rwCRGw_pmnMSL4QiQ9JCgE3W_NKMsmXaNyodYNnmXP_1756211829527_completion_certificate.pdf',
+//       certificateUrl:
+//         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/pmnMSL4QiQ9JCgE3W/kkE9HyeNcw6rwCRGw_pmnMSL4QiQ9JCgE3W_NKMsmXaNyodYNnmXP_1756211829527_completion_certificate.pdf',
+//     },
+//     {
+//       id: 4,
+//       title: 'Mastercard - Cybersecurity Job Simulation',
+//       issuer: 'Forage',
+//       date: '2025',
+//       description:
+//         'Worked as a Security Analyst to detect phishing threats, assess security vulnerabilities across business units, and design targeted awareness training programs to strengthen cyber defense',
+//       color: 'text-purple-300',
+//       image:
+//         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/mfxGwGDp6WkQmtmTf/vcKAB5yYAgvemepGQ_mfxGwGDp6WkQmtmTf_NKMsmXaNyodYNnmXP_1756149868176_completion_certificate.pdf',
+//       certificateUrl:
+//         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/mfxGwGDp6WkQmtmTf/vcKAB5yYAgvemepGQ_mfxGwGDp6WkQmtmTf_NKMsmXaNyodYNnmXP_1756149868176_completion_certificate.pdf',
+//     },
+//     {
+//       id: 5,
+//       title:
+//         'Hewlett Packard Enterprise  - Software Engineering Job Simulation',
+//       issuer: 'Forage',
+//       date: '2025',
+//       description:
+//         'Developed a RESTful web service using Java Spring Boot for employee management, integrated JSON data handling and implemented unit testing to ensure high performance and reliability',
+//       color: 'text-emerald-300',
+//       image:
+//         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/fgHAi6dLhpRsGKyyN/da2T3WZCbMAJD7bNB_fgHAi6dLhpRsGKyyN_NKMsmXaNyodYNnmXP_1748024554235_completion_certificate.pdf',
+//       certificateUrl:
+//         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/fgHAi6dLhpRsGKyyN/da2T3WZCbMAJD7bNB_fgHAi6dLhpRsGKyyN_NKMsmXaNyodYNnmXP_1748024554235_completion_certificate.pdf',
+//     },
+//     {
+//       id: 6,
+//       title: 'British Airways - Data Science Job Simulation',
+//       issuer: 'Forage',
+//       date: '2025',
+//       description:
+//         'Performed customer review scraping and analysis and built a predictive model to identify key factors influencing buying behavior, demonstrating data-driven decision-making skills.',
+//       color: 'text-indigo-300',
+//       image:
+//         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/tMjbs76F526fF5v3G/NjynCWzGSaWXQCxSX_tMjbs76F526fF5v3G_NKMsmXaNyodYNnmXP_1748023944160_completion_certificate.pdf',
+//       certificateUrl:
+//         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/tMjbs76F526fF5v3G/NjynCWzGSaWXQCxSX_tMjbs76F526fF5v3G_NKMsmXaNyodYNnmXP_1748023944160_completion_certificate.pdf',
+//     },
+//     {
+//       id: 7,
+//       title: 'Walmart USA - Advanced Software Engineering Job Simulation',
+//       issuer: 'Forage',
+//       date: '11/2023',
+//       description:
+//         'Gained hands-on experience in advanced software engineering by solving real-world Walmart case studies — optimized shipping operations with a custom heap data structure in Java, and improved system design through UML class and ER diagrams for complex departmental requirements',
+//       color: 'text-cyan-300',
+//       image:
+//         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Walmart%20USA/oX6f9BbCL9kJDJzfg_Walmart%20USA_NKMsmXaNyodYNnmXP_1699640339116_completion_certificate.pdf',
+//       certificateUrl:
+//         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Walmart%20USA/oX6f9BbCL9kJDJzfg_Walmart%20USA_NKMsmXaNyodYNnmXP_1699640339116_completion_certificate.pdf',
+//     },
+//   ];
+
+//   const handleDownloadCertificate = (certificate: any) => {
+//     const link = document.createElement('a');
+//     link.href = certificate.image;
+//     link.download = `${certificate.title.replace(/\s+/g, '_')}_Certificate.jpg`;
+//     document.body.appendChild(link);
+//     link.click();
+//     document.body.removeChild(link);
+//   };
+
+//   // convert Google Drive link to embed link
+//   const getEmbedUrl = (url: string) => {
+//     const match = url.match(/\/d\/(.*?)\//);
+//     if (match && match[1]) {
+//       return `https://drive.google.com/file/d/${match[1]}/preview`;
+//     }
+//     return url;
+//   };
+
+//   return (
+//     <>
+//       <div className="pt-20">
+//         <About />
+
+//         {/* Additional About Content */}
+//         <section className="py-20 bg-slate-800">
+//           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+//             <div className="grid md:grid-cols-2 gap-12">
+//               <div>
+//                 <h3 className="text-3xl font-bold text-white mb-6">
+//                   My Education
+//                 </h3>
+//                 <div className="space-y-6">
+//                   <div className="border-l-4 border-purple-500 pl-6">
+//                     <h4 className="text-xl font-semibold text-white mb-2">
+//                       B.Tech Computer Science & Engineering
+//                     </h4>
+//                     <h4 className="text-xl font-semibold text-white mb-2">
+//                       2021 - 2025
+//                     </h4>
+//                     <h5 className="text-lg text-purple-300 mb-2">
+//                       GPA: 8.02/10
+//                     </h5>
+//                     <p className="text-slate-300">
+//                       Coursework: Data Structures & Algorithms, Operating
+//                       Systems, Database Management Systems, Computer Networks,
+//                       Artificial Intelligence, Web Development, Cyber Security
+//                     </p>
+//                   </div>
+//                   <div className="border-l-4 border-orange-500 pl-6">
+//                     <h4 className="text-xl font-semibold text-white mb-2">
+//                       Class XII
+//                     </h4>
+//                     <h4 className="text-xl font-semibold text-white mb-2">
+//                       2018 - 2020
+//                     </h4>
+//                     <h5 className="text-lg text-orange-300 mb-2">
+//                       Science (PCM)
+//                     </h5>
+//                     <p className="text-slate-300">
+//                       Focused on core subjects like Physics, Chemistry,
+//                       Mathematics. Built a strong foundation in programming and
+//                       problem-solving.
+//                     </p>
+//                   </div>
+//                   <div className="border-l-4 border-blue-500 pl-6">
+//                     <h4 className="text-xl font-semibold text-white mb-2">
+//                       Class X
+//                     </h4>
+//                     <h4 className="text-xl font-semibold text-white mb-2">
+//                       2017 - 2018
+//                     </h4>
+//                     <h5 className="text-lg text-blue-300 mb-2">
+//                       Secondary Education
+//                     </h5>
+//                     <p className="text-slate-300">
+//                       Achieved strong academic performance and developed early
+//                       interest in technology and coding.
+//                     </p>
+//                   </div>{' '}
+//                   <div className="h-6"></div> {/* spacer */}
+//                 </div>
+
+//                 <div>
+//                   <h3 className="text-3xl font-bold text-white mb-6">
+//                     Project Completion Certificates
+//                   </h3>
+//                   <div className="space-y-6">
+//                     <div className="bg-slate-700/50 p-6 rounded-lg border border-slate-600/50">
+//                       <div className="flex justify-between items-start">
+//                         <div className="flex-1">
+//                           <h4 className="text-xl font-semibold text-white mb-2">
+//                             Build a CI/CD Pipeline with Docker: From Code to
+//                             Deployment
+//                           </h4>
+//                           <p className="text-purple-300 mb-2">
+//                             Coursera • 2024
+//                           </p>
+//                           <p className="text-slate-300 mb-4">
+//                             {/* Hands-on project building a complete CI/CD pipeline
+//                             using Docker, covering containerization, deployment
+//                             automation, and efficient delivery workflows to
+//                             streamline software development. */}
+//                             Designed and implemented a CI/CD pipeline leveraging
+//                             Docker to containerize applications, automate builds
+//                             and deployments, and optimize software delivery for
+//                             faster, reliable releases.
+//                           </p>
+//                         </div>
+
+//                         <button
+//                           onClick={() =>
+//                             setSelectedCertificate({
+//                               title: 'Bachelor of Computer Science',
+//                               issuer: 'University Name',
+//                               date: '2019',
+//                               description:
+//                                 'Graduated with honors, specializing in software engineering and web technologies.',
+//                               certificateUrl:
+//                                 'https://drive.google.com/file/d/1WqfAfe9XynYSdBfbN7dtYAxiR4LEU8_m/view?usp=drivesdk',
+//                               image:
+//                                 'https://drive.google.com/file/d/1WqfAfe9XynYSdBfbN7dtYAxiR4LEU8_m/view?usp=drivesdk',
+//                             })
+//                           }
+//                           className="ml-4 flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-orange-600 text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
+//                         >
+//                           <Eye size={16} />
+//                           View Certificate
+//                         </button>
+//                       </div>
+//                     </div>
+
+//                     {/* Certifications */}
+//                     {certificates.map((cert) => (
+//                       <div
+//                         key={cert.id}
+//                         className="bg-slate-700/50 p-6 rounded-lg border border-slate-600/50 hover:bg-slate-700/70 transition-all duration-300"
+//                       >
+//                         <div className="flex justify-between items-start">
+//                           <div className="flex-1">
+//                             <h4 className="text-xl font-semibold text-white mb-2">
+//                               {cert.title}
+//                             </h4>
+//                             <p className={`${cert.color} mb-2`}>
+//                               {cert.issuer} • {cert.date}
+//                             </p>
+//                             <p className="text-slate-300 mb-4">
+//                               {cert.description}
+//                             </p>
+//                           </div>
+//                           <button
+//                             onClick={() => setSelectedCertificate(cert)}
+//                             className="ml-4 flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-orange-600 text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
+//                           >
+//                             <Eye size={16} />
+//                             View Certificate
+//                           </button>
+//                         </div>
+//                       </div>
+//                     ))}
+//                   </div>
+//                 </div>
+//               </div>
+
+//               <div>
+//                 <h3 className="text-3xl font-bold text-white mb-6">
+//                   Internship & Certifications
+//                 </h3>
+//                 <div className="space-y-6">
+//                   <div className="bg-slate-700/50 p-6 rounded-lg border border-slate-600/50">
+//                     <div className="flex justify-between items-start">
+//                       <div className="flex-1">
+//                         <h4 className="text-xl font-semibold text-white mb-2">
+//                           Software Development Intern
+//                         </h4>
+//                         <p className="text-purple-300 mb-2">ONGC • 2024</p>
+//                         <p className="text-slate-300 mb-4">
+//                           Contributed to Stirling PDF by developing new features
+//                           and deploying it on ONGC’s internal systems and
+//                           network using Docker and Windows environments, while
+//                           creating installation workflows and technical
+//                           documentation to improve operational efficiency.
+//                         </p>
+//                       </div>
+//                       <button
+//                         onClick={() =>
+//                           setSelectedCertificate({
+//                             title: 'Bachelor of Computer Science',
+//                             issuer: 'University Name',
+//                             date: '2019',
+//                             description:
+//                               'Graduated with honors, specializing in software engineering and web technologies.',
+//                             certificateUrl:
+//                               'https://drive.google.com/file/d/1OvvviE4uTdAMm25WWxAjID0i2h7Td00I/view?usp=drivesdk',
+//                             image: '',
+//                           })
+//                         }
+//                         className="ml-4 flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-orange-600 text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
+//                       >
+//                         <Eye size={16} />
+//                         View Certificate
+//                       </button>
+//                     </div>
+//                   </div>
+
+//                   {/* Certifications */}
+//                   {certificates.map((cert) => (
+//                     <div
+//                       key={cert.id}
+//                       className="bg-slate-700/50 p-6 rounded-lg border border-slate-600/50 hover:bg-slate-700/70 transition-all duration-300"
+//                     >
+//                       <div className="flex justify-between items-start">
+//                         <div className="flex-1">
+//                           <h4 className="text-xl font-semibold text-white mb-2">
+//                             {cert.title}
+//                           </h4>
+//                           <p className={`${cert.color} mb-2`}>
+//                             {cert.issuer} • {cert.date}
+//                           </p>
+//                           <p className="text-slate-300 mb-4">
+//                             {cert.description}
+//                           </p>
+//                         </div>
+//                         <button
+//                           onClick={() => setSelectedCertificate(cert)}
+//                           className="ml-4 flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-orange-600 text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
+//                         >
+//                           <Eye size={16} />
+//                           View Certificate
+//                         </button>
+//                       </div>
+//                     </div>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         </section>
+//       </div>
+
+//       {/* Certificate Modal */}
+//       {selectedCertificate && (
+//         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+//           <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
+//             {/* Modal Header */}
+//             <div className="bg-slate-800 p-4 flex justify-between items-center">
+//               <h3 className="text-xl font-semibold text-white">
+//                 {selectedCertificate.title}
+//               </h3>
+//               <button
+//                 onClick={() => setSelectedCertificate(null)}
+//                 className="p-2 hover:bg-slate-700 rounded-full text-slate-300 hover:text-white transition-colors duration-200"
+//               >
+//                 <X size={20} />
+//               </button>
+//             </div>
+
+//             {/* Certificate Display */}
+//             <div className="p-4 bg-gray-50 h-[75vh]">
+//               <iframe
+//                 src={getEmbedUrl(selectedCertificate.certificateUrl)}
+//                 title="Certificate"
+//                 className="w-full h-full rounded-lg border border-gray-300"
+//                 allow="autoplay"
+//               />
+//             </div>
+
+//             {/* Modal Footer */}
+//             <div className="bg-slate-800 p-4 flex justify-center">
+//               <button
+//                 onClick={() => handleDownloadCertificate(selectedCertificate)}
+//                 className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-orange-600 text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
+//               >
+//                 <Download size={18} />
+//                 Download Certificate
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+//       )}
+//     </>
+//   );
+// };
+
+// export default AboutPage;
+
+// import React, { useState } from 'react';
+// import { Eye, Download, X } from 'lucide-react';
+// import About from '../components/About';
+
+// const AboutPage = () => {
+//   const [selectedCertificate, setSelectedCertificate] = useState<any>(null);
+
+//   // Project Completion Certificates
+//   const projectCertificates = [
+//     {
+//       id: 1,
+//       title: 'Build a CI/CD Pipeline with Docker: From Code to Deployment',
+//       issuer: 'Coursera',
+//       date: '2024',
+//       description:
+//         'Designed and implemented a CI/CD pipeline leveraging Docker to containerize applications, automate builds and deployments, and optimize software delivery for faster, reliable releases.',
+//       color: 'text-purple-300',
+//       certificateUrl:
+//         'https://drive.google.com/file/d/1WqfAfe9XynYSdBfbN7dtYAxiR4LEU8_m/view?usp=drivesdk',
+//       image:
+//         'https://drive.google.com/file/d/1WqfAfe9XynYSdBfbN7dtYAxiR4LEU8_m/view?usp=drivesdk',
+//     },
+//   ];
+
+//   // Internship & Job Simulation Certificates
+//   const certificates = [
+//     {
+//       id: 1,
+//       title: 'KPMG AU - Data Analytics Consulting Virtual Internship',
+//       issuer: 'Forage',
+//       date: '06/2024',
+//       description:
+//         'Completed a virtual job simulation with KPMG Australia’s Data, Analytics & Modelling team, focusing on data quality assessment, customer segmentation, and dashboard creation to deliver actionable insights',
+//       color: 'text-blue-300',
+//       certificateUrl:
+//         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/KPMG%20AU/m7W4GMqeT3bh9Nb2c_KPMG%20AU_NKMsmXaNyodYNnmXP_1718307708994_completion_certificate.pdf',
+//     },
+//     {
+//       id: 2,
+//       title: 'Google Data Analytics Professional Certificate',
+//       issuer: 'Coursera',
+//       date: '2024',
+//       description:
+//         'Completed an 8-course program covering data collection, cleaning, analysis, visualization, and R programming with a capstone case study.',
+//       color: 'text-orange-300',
+//       certificateUrl:
+//         'https://drive.google.com/file/d/1Me70Lqzm8RTAmP2n06JagrOnMuIJP_U6/view?usp=drivesdk',
+//     },
+//     {
+//       id: 3,
+//       title: 'AWS - Solutions Architecture Job Simulation',
+//       issuer: 'Forage',
+//       date: '08/2025',
+//       description:
+//         'Designed a scalable hosting architecture using Elastic Beanstalk for a high-growth client and communicated the solution with clear cost analysis.',
+//       color: 'text-green-300',
+//       certificateUrl:
+//         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/pmnMSL4QiQ9JCgE3W/kkE9HyeNcw6rwCRGw_pmnMSL4QiQ9JCgE3W_NKMsmXaNyodYNnmXP_1756211829527_completion_certificate.pdf',
+//     },
+//     {
+//       id: 4,
+//       title: 'Mastercard - Cybersecurity Job Simulation',
+//       issuer: 'Forage',
+//       date: '2025',
+//       description:
+//         'Worked as a Security Analyst to detect phishing threats, assess security vulnerabilities across business units, and design targeted awareness training programs to strengthen cyber defense.',
+//       color: 'text-purple-300',
+//       certificateUrl:
+//         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/mfxGwGDp6WkQmtmTf/vcKAB5yYAgvemepGQ_mfxGwGDp6WkQmtmTf_NKMsmXaNyodYNnmXP_1756149868176_completion_certificate.pdf',
+//     },
+//     {
+//       id: 5,
+//       title: 'Hewlett Packard Enterprise - Software Engineering Job Simulation',
+//       issuer: 'Forage',
+//       date: '2025',
+//       description:
+//         'Developed a RESTful web service using Java Spring Boot for employee management, integrated JSON data handling and implemented unit testing to ensure high performance and reliability.',
+//       color: 'text-emerald-300',
+//       certificateUrl:
+//         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/fgHAi6dLhpRsGKyyN/da2T3WZCbMAJD7bNB_fgHAi6dLhpRsGKyyN_NKMsmXaNyodYNnmXP_1748024554235_completion_certificate.pdf',
+//     },
+//     {
+//       id: 6,
+//       title: 'British Airways - Data Science Job Simulation',
+//       issuer: 'Forage',
+//       date: '2025',
+//       description:
+//         'Performed customer review scraping and analysis and built a predictive model to identify key factors influencing buying behavior, demonstrating data-driven decision-making skills.',
+//       color: 'text-indigo-300',
+//       certificateUrl:
+//         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/tMjbs76F526fF5v3G/NjynCWzGSaWXQCxSX_tMjbs76F526fF5v3G_NKMsmXaNyodYNnmXP_1748023944160_completion_certificate.pdf',
+//     },
+//     {
+//       id: 7,
+//       title: 'Walmart USA - Advanced Software Engineering Job Simulation',
+//       issuer: 'Forage',
+//       date: '11/2023',
+//       description:
+//         'Gained hands-on experience in advanced software engineering by solving real-world Walmart case studies — optimized shipping operations with a custom heap data structure in Java, and improved system design through UML class and ER diagrams for complex departmental requirements.',
+//       color: 'text-cyan-300',
+//       certificateUrl:
+//         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Walmart%20USA/oX6f9BbCL9kJDJzfg_Walmart%20USA_NKMsmXaNyodYNnmXP_1699640339116_completion_certificate.pdf',
+//     },
+//   ];
+
+//   // Convert Google Drive link for embed
+//   const getEmbedUrl = (url: string) => {
+//     const match = url.match(/\/d\/(.*?)\//);
+//     if (match && match[1]) {
+//       return `https://drive.google.com/file/d/${match[1]}/preview`;
+//     }
+//     return url;
+//   };
+
+//   return (
+//     <>
+//       <div className="pt-20">
+//         <About />
+
+//         {/* Education */}
+//         <section className="py-20 bg-slate-800">
+//           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+//             <div className="grid md:grid-cols-2 gap-12">
+//               {/* Left Column - Education + Projects */}
+//               <div>
+//                 <h3 className="text-3xl font-bold text-white mb-6">
+//                   My Education
+//                 </h3>
+//                 {/* timeline blocks */}
+//                 <div className="space-y-6">
+//                   <div className="border-l-4 border-purple-500 pl-6">
+//                     <h4 className="text-xl font-semibold text-white mb-2">
+//                       B.Tech Computer Science & Engineering
+//                     </h4>
+//                     <h4 className="text-xl font-semibold text-white mb-2">
+//                       2021 - 2025
+//                     </h4>
+//                     <h5 className="text-lg text-purple-300 mb-2">
+//                       GPA: 8.02/10
+//                     </h5>
+//                     <p className="text-slate-300">
+//                       Coursework: Data Structures & Algorithms, Operating
+//                       Systems, Database Management Systems, Computer Networks,
+//                       Artificial Intelligence, Web Development, Cyber Security
+//                     </p>
+//                   </div>
+//                   <div className="border-l-4 border-orange-500 pl-6">
+//                     <h4 className="text-xl font-semibold text-white mb-2">
+//                       Class XII
+//                     </h4>
+//                     <h4 className="text-xl font-semibold text-white mb-2">
+//                       2018 - 2020
+//                     </h4>
+//                     <h5 className="text-lg text-orange-300 mb-2">
+//                       Science (PCM)
+//                     </h5>
+//                     <p className="text-slate-300">
+//                       Focused on core subjects like Physics, Chemistry,
+//                       Mathematics. Built a strong foundation in programming and
+//                       problem-solving.
+//                     </p>
+//                   </div>
+//                   <div className="border-l-4 border-blue-500 pl-6">
+//                     <h4 className="text-xl font-semibold text-white mb-2">
+//                       Class X
+//                     </h4>
+//                     <h4 className="text-xl font-semibold text-white mb-2">
+//                       2017 - 2018
+//                     </h4>
+//                     <h5 className="text-lg text-blue-300 mb-2">
+//                       Secondary Education
+//                     </h5>
+//                     <p className="text-slate-300">
+//                       Achieved strong academic performance and developed early
+//                       interest in technology and coding.
+//                     </p>
+//                   </div>
+//                 </div>
+
+//                 {/* Project Certificates */}
+//                 <div className="mt-10">
+//                   <h3 className="text-3xl font-bold text-white mb-6">
+//                     Project Completion Certificates
+//                   </h3>
+//                   <div className="space-y-6">
+//                     {projectCertificates.map((cert) => (
+//                       <div
+//                         key={cert.id}
+//                         className="bg-slate-700/50 p-6 rounded-lg border border-slate-600/50"
+//                       >
+//                         <div className="flex justify-between items-start">
+//                           <div className="flex-1">
+//                             <h4 className="text-xl font-semibold text-white mb-2">
+//                               {cert.title}
+//                             </h4>
+//                             <p className={`${cert.color} mb-2`}>
+//                               {cert.issuer} • {cert.date}
+//                             </p>
+//                             <p className="text-slate-300 mb-4">
+//                               {cert.description}
+//                             </p>
+//                           </div>
+//                           <button
+//                             onClick={() => setSelectedCertificate(cert)}
+//                             className="ml-4 flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-orange-600 text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
+//                           >
+//                             <Eye size={16} />
+//                             View Certificate
+//                           </button>
+//                         </div>
+//                       </div>
+//                     ))}
+//                   </div>
+//                 </div>
+//               </div>
+
+//               {/* Right Column - Internships & Certifications */}
+//               <div>
+//                 <h3 className="text-3xl font-bold text-white mb-6">
+//                   Internship & Certifications
+//                 </h3>
+//                 <div className="space-y-6">
+//                   {/* Internship block */}
+//                   <div className="bg-slate-700/50 p-6 rounded-lg border border-slate-600/50">
+//                     <div className="flex justify-between items-start">
+//                       <div className="flex-1">
+//                         <h4 className="text-xl font-semibold text-white mb-2">
+//                           Software Development Intern
+//                         </h4>
+//                         <p className="text-purple-300 mb-2">ONGC • 2024</p>
+//                         <p className="text-slate-300 mb-4">
+//                           Contributed to Stirling PDF by developing new features
+//                           and deploying it on ONGC’s internal systems and
+//                           network using Docker and Windows environments.
+//                         </p>
+//                       </div>
+//                       <button
+//                         onClick={() =>
+//                           setSelectedCertificate({
+//                             title: 'Software Development Intern',
+//                             issuer: 'ONGC',
+//                             date: '2024',
+//                             certificateUrl:
+//                               'https://drive.google.com/file/d/1OvvviE4uTdAMm25WWxAjID0i2h7Td00I/view?usp=drivesdk',
+//                           })
+//                         }
+//                         className="ml-4 flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-orange-600 text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
+//                       >
+//                         <Eye size={16} />
+//                         View Certificate
+//                       </button>
+//                     </div>
+//                   </div>
+
+//                   {/* Job Simulations & Certificates */}
+//                   {certificates.map((cert) => (
+//                     <div
+//                       key={cert.id}
+//                       className="bg-slate-700/50 p-6 rounded-lg border border-slate-600/50 hover:bg-slate-700/70 transition-all duration-300"
+//                     >
+//                       <div className="flex justify-between items-start">
+//                         <div className="flex-1">
+//                           <h4 className="text-xl font-semibold text-white mb-2">
+//                             {cert.title}
+//                           </h4>
+//                           <p className={`${cert.color} mb-2`}>
+//                             {cert.issuer} • {cert.date}
+//                           </p>
+//                           <p className="text-slate-300 mb-4">
+//                             {cert.description}
+//                           </p>
+//                         </div>
+//                         <button
+//                           onClick={() => setSelectedCertificate(cert)}
+//                           className="ml-4 flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-orange-600 text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
+//                         >
+//                           <Eye size={16} />
+//                           View Certificate
+//                         </button>
+//                       </div>
+//                     </div>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         </section>
+//       </div>
+
+//       {/* Certificate Modal */}
+//       {selectedCertificate && (
+//         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+//           <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
+//             {/* Header */}
+//             <div className="bg-slate-800 p-4 flex justify-between items-center">
+//               <h3 className="text-xl font-semibold text-white">
+//                 {selectedCertificate.title}
+//               </h3>
+//               <button
+//                 onClick={() => setSelectedCertificate(null)}
+//                 className="p-2 hover:bg-slate-700 rounded-full text-slate-300 hover:text-white transition-colors duration-200"
+//               >
+//                 <X size={20} />
+//               </button>
+//             </div>
+
+//             {/* Certificate iframe */}
+//             <div className="p-4 bg-gray-50 h-[75vh]">
+//               <iframe
+//                 src={getEmbedUrl(selectedCertificate.certificateUrl)}
+//                 title="Certificate"
+//                 className="w-full h-full rounded-lg border border-gray-300"
+//                 allow="autoplay"
+//               />
+//             </div>
+
+//             {/* Footer */}
+//             <div className="bg-slate-800 p-4 flex justify-center">
+//               <a
+//                 href={selectedCertificate.certificateUrl}
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-orange-600 text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
+//               >
+//                 <Download size={18} />
+//                 Download Certificate
+//               </a>
+//             </div>
+//           </div>
+//         </div>
+//       )}
+//     </>
+//   );
+// };
+
+// export default AboutPage;
+
+import React, { useState } from 'react';
 import { Eye, Download, X } from 'lucide-react';
 import About from '../components/About';
 
 const AboutPage = () => {
   const [selectedCertificate, setSelectedCertificate] = useState<any>(null);
 
+  // ✅ Project Completion Certificates (unique ones only)
+  const projectCertificates = [
+    {
+      id: 1,
+      title: 'Build a CI/CD Pipeline with Docker: From Code to Deployment',
+      issuer: 'Coursera',
+      date: '2024',
+      description:
+        'Designed and implemented a CI/CD pipeline leveraging Docker to containerize applications, automate builds and deployments and optimize software delivery for faster, reliable releases.',
+      color: 'text-purple-300',
+      certificateUrl:
+        'https://drive.google.com/file/d/1WqfAfe9XynYSdBfbN7dtYAxiR4LEU8_m/view?usp=drivesdk',
+    },
+    {
+      id: 2,
+      title: 'Implementing CI/CD with Jenkins: Creating Pipeline as Code',
+      issuer: 'Coursera',
+      date: '2024',
+      description:
+        'Built and automated CI/CD pipelines using Jenkins Pipeline as Code, integrating version control and deployment workflows to streamline software delivery and improve reliability',
+      color: 'text-purple-300',
+      certificateUrl:
+        'https://drive.google.com/file/d/1weVzGX07lHfCncuA6Kd47t-jCGM86x-G/view',
+    },
+    {
+      id: 3,
+      title: 'Create Interactive Dashboards with Streamlit and Python',
+      issuer: 'Coursera',
+      date: '2024',
+      description:
+        'Built interactive dashboards using Python and Streamlit, integrating data visualization and user-friendly interfaces to enable dynamic insights and decision-making',
+      color: 'text-purple-300',
+      certificateUrl:
+        'https://drive.google.com/file/d/1Gp2rqaTPjfTOmkzO5N6ZjLCCwpJwttG1/view?usp=drive_link',
+    },
+    {
+      id: 4,
+      title: 'Perform Sentiment Analysis with scikit-learn',
+      issuer: 'Coursera',
+      date: '2024',
+      description:
+        'Applied natural language processing techniques using scikit-learn to perform sentiment analysis, preprocess text data and build machine learning models for classifying opinions.',
+      color: 'text-purple-300',
+      certificateUrl:
+        'https://drive.google.com/file/d/143BfiQSorV0u_tg9NalqklLKpIbY5ij6/view?usp=drive_link',
+    },
+    {
+      id: 5,
+      title: 'HR Analytics - Build an HR dashboard using Power BI',
+      issuer: 'Coursera',
+      date: '2024',
+      description:
+        'Developed an interactive HR analytics dashboard in Power BI to visualize workforce metrics, track employee performance and support data-driven decision-making in HR management',
+      color: 'text-purple-300',
+      certificateUrl:
+        'https://drive.google.com/file/d/19qPnvhoHib6PqWRyh0iguW002lfP-YTS/view?usp=drive_link',
+    },
+  ];
+  // ✅ Internship & Job Simulation Certificates (removed duplicates)
   const certificates = [
     {
       id: 1,
-      title: 'KPMG AU - Data	Analytics	Consulting	Virtual	Internship',
+      title: 'KPMG AU - Data Analytics Consulting Virtual Internship',
       issuer: 'Forage',
       date: '06/2024',
       description:
-        'Completed a virtual job simulation with KPMG Australia’s Data, Analytics & Modelling team, focusing on data quality assessment, customer segmentation, and dashboard creation to deliver actionable insights',
+        'Completed a virtual job simulation with KPMG Australia’s Data, Analytics & Modelling team, focusing on data quality assessment, customer segmentation and dashboard creation to deliver actionable insights',
       color: 'text-blue-300',
-      image:
-        'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/KPMG%20AU/m7W4GMqeT3bh9Nb2c_KPMG%20AU_NKMsmXaNyodYNnmXP_1718307708994_completion_certificate.pdf',
       certificateUrl:
         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/KPMG%20AU/m7W4GMqeT3bh9Nb2c_KPMG%20AU_NKMsmXaNyodYNnmXP_1718307708994_completion_certificate.pdf',
     },
@@ -336,24 +1118,19 @@ const AboutPage = () => {
       issuer: 'Coursera',
       date: '2024',
       description:
-        'Completed an 8-course program covering data collection, cleaning, analysis, visualization, and R programming with a capstone case study.',
+        'Completed an 8-course program covering data collection, cleaning, analysis, visualization and R programming with a capstone case study.',
       color: 'text-orange-300',
-      image:
-        'https://drive.google.com/file/d/1Me70Lqzm8RTAmP2n06JagrOnMuIJP_U6/view?usp=drivesdk',
       certificateUrl:
         'https://drive.google.com/file/d/1Me70Lqzm8RTAmP2n06JagrOnMuIJP_U6/view?usp=drivesdk',
     },
-
     {
       id: 3,
       title: 'AWS - Solutions Architecture Job Simulation',
       issuer: 'Forage',
       date: '08/2025',
       description:
-        'Completed AWS APAC Solutions Architecture virtual experience program on Forage, where I designed a scalable hosting architecture using Elastic Beanstalk for a high-growth client and communicated the solution with clear cost analysis.',
+        'Designed a scalable hosting architecture using Elastic Beanstalk for a high-growth client and communicated the solution with clear cost analysis.',
       color: 'text-green-300',
-      image:
-        'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/pmnMSL4QiQ9JCgE3W/kkE9HyeNcw6rwCRGw_pmnMSL4QiQ9JCgE3W_NKMsmXaNyodYNnmXP_1756211829527_completion_certificate.pdf',
       certificateUrl:
         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/pmnMSL4QiQ9JCgE3W/kkE9HyeNcw6rwCRGw_pmnMSL4QiQ9JCgE3W_NKMsmXaNyodYNnmXP_1756211829527_completion_certificate.pdf',
     },
@@ -363,24 +1140,19 @@ const AboutPage = () => {
       issuer: 'Forage',
       date: '2025',
       description:
-        'Worked as a Security Analyst to detect phishing threats, assess security vulnerabilities across business units, and design targeted awareness training programs to strengthen cyber defense',
+        'Worked as a Security Analyst to detect phishing threats, assess security vulnerabilities across business units and design targeted awareness training programs to strengthen cyber defense.',
       color: 'text-purple-300',
-      image:
-        'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/mfxGwGDp6WkQmtmTf/vcKAB5yYAgvemepGQ_mfxGwGDp6WkQmtmTf_NKMsmXaNyodYNnmXP_1756149868176_completion_certificate.pdf',
       certificateUrl:
         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/mfxGwGDp6WkQmtmTf/vcKAB5yYAgvemepGQ_mfxGwGDp6WkQmtmTf_NKMsmXaNyodYNnmXP_1756149868176_completion_certificate.pdf',
     },
     {
       id: 5,
-      title:
-        'Hewlett Packard Enterprise  - Software Engineering Job Simulation',
+      title: 'Hewlett Packard Enterprise - Software Engineering Job Simulation',
       issuer: 'Forage',
       date: '2025',
       description:
-        'Developed a RESTful web service using Java Spring Boot for employee management, integrated JSON data handling and implemented unit testing to ensure high performance and reliability',
+        'Developed a RESTful web service using Java Spring Boot for employee management, integrated JSON data handling and implemented unit testing to ensure high performance and reliability.',
       color: 'text-emerald-300',
-      image:
-        'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/fgHAi6dLhpRsGKyyN/da2T3WZCbMAJD7bNB_fgHAi6dLhpRsGKyyN_NKMsmXaNyodYNnmXP_1748024554235_completion_certificate.pdf',
       certificateUrl:
         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/fgHAi6dLhpRsGKyyN/da2T3WZCbMAJD7bNB_fgHAi6dLhpRsGKyyN_NKMsmXaNyodYNnmXP_1748024554235_completion_certificate.pdf',
     },
@@ -392,8 +1164,6 @@ const AboutPage = () => {
       description:
         'Performed customer review scraping and analysis and built a predictive model to identify key factors influencing buying behavior, demonstrating data-driven decision-making skills.',
       color: 'text-indigo-300',
-      image:
-        'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/tMjbs76F526fF5v3G/NjynCWzGSaWXQCxSX_tMjbs76F526fF5v3G_NKMsmXaNyodYNnmXP_1748023944160_completion_certificate.pdf',
       certificateUrl:
         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/tMjbs76F526fF5v3G/NjynCWzGSaWXQCxSX_tMjbs76F526fF5v3G_NKMsmXaNyodYNnmXP_1748023944160_completion_certificate.pdf',
     },
@@ -403,25 +1173,14 @@ const AboutPage = () => {
       issuer: 'Forage',
       date: '11/2023',
       description:
-        'Gained hands-on experience in advanced software engineering by solving real-world Walmart case studies — optimized shipping operations with a custom heap data structure in Java, and improved system design through UML class and ER diagrams for complex departmental requirements',
+        'Gained hands-on experience in advanced software engineering by solving real-world Walmart case studies — optimized shipping operations with a custom heap data structure in Java and improved system design through UML class and ER diagrams for complex departmental requirements.',
       color: 'text-cyan-300',
-      image:
-        'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Walmart%20USA/oX6f9BbCL9kJDJzfg_Walmart%20USA_NKMsmXaNyodYNnmXP_1699640339116_completion_certificate.pdf',
       certificateUrl:
         'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Walmart%20USA/oX6f9BbCL9kJDJzfg_Walmart%20USA_NKMsmXaNyodYNnmXP_1699640339116_completion_certificate.pdf',
     },
   ];
 
-  const handleDownloadCertificate = (certificate: any) => {
-    const link = document.createElement('a');
-    link.href = certificate.image;
-    link.download = `${certificate.title.replace(/\s+/g, '_')}_Certificate.jpg`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-  // convert Google Drive link to embed link
+  // Convert Google Drive link for embed
   const getEmbedUrl = (url: string) => {
     const match = url.match(/\/d\/(.*?)\//);
     if (match && match[1]) {
@@ -435,21 +1194,27 @@ const AboutPage = () => {
       <div className="pt-20">
         <About />
 
-        {/* Additional About Content */}
+        {/* Education */}
         <section className="py-20 bg-slate-800">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12">
+              {/* Left Column - Education + Project Certificates */}
               <div>
                 <h3 className="text-3xl font-bold text-white mb-6">
                   My Education
                 </h3>
+
+                {/* timeline */}
                 <div className="space-y-6">
                   <div className="border-l-4 border-purple-500 pl-6">
                     <h4 className="text-xl font-semibold text-white mb-2">
-                      B.Tech Computer Science & Engineering
+                      Graphic Era Deemed To Be University
                     </h4>
                     <h4 className="text-xl font-semibold text-white mb-2">
                       2021 - 2025
+                    </h4>
+                    <h4 className="text-xl font-semibold text-white mb-2">
+                      B.Tech Computer Science & Engineering
                     </h4>
                     <h5 className="text-lg text-purple-300 mb-2">
                       GPA: 8.02/10
@@ -457,15 +1222,15 @@ const AboutPage = () => {
                     <p className="text-slate-300">
                       Coursework: Data Structures & Algorithms, Operating
                       Systems, Database Management Systems, Computer Networks,
-                      Artificial Intelligence, Web Development, Cyber Security
+                      AI, Web Development, Cyber Security
                     </p>
                   </div>
                   <div className="border-l-4 border-orange-500 pl-6">
                     <h4 className="text-xl font-semibold text-white mb-2">
-                      Class XII
+                      Doon Senior Secondary School
                     </h4>
                     <h4 className="text-xl font-semibold text-white mb-2">
-                      2018 - 2020
+                      Class XII _____________________ 2018 - 2020
                     </h4>
                     <h5 className="text-lg text-orange-300 mb-2">
                       Science (PCM)
@@ -478,10 +1243,10 @@ const AboutPage = () => {
                   </div>
                   <div className="border-l-4 border-blue-500 pl-6">
                     <h4 className="text-xl font-semibold text-white mb-2">
-                      Class X
+                      Doon Senior Secondary School
                     </h4>
                     <h4 className="text-xl font-semibold text-white mb-2">
-                      2017 - 2018
+                      Class X _______________________ 2017 - 2018
                     </h4>
                     <h5 className="text-lg text-blue-300 mb-2">
                       Secondary Education
@@ -492,13 +1257,51 @@ const AboutPage = () => {
                     </p>
                   </div>
                 </div>
+
+                {/* ✅ Project Certificates */}
+                <div className="mt-10">
+                  <h3 className="text-3xl font-bold text-white mb-6">
+                    Project Completion Certificates
+                  </h3>
+                  <div className="space-y-6">
+                    {projectCertificates.map((cert) => (
+                      <div
+                        key={cert.id}
+                        className="bg-slate-700/50 p-6 rounded-lg border border-slate-600/50"
+                      >
+                        <div className="flex justify-between items-start">
+                          <div className="flex-1">
+                            <h4 className="text-xl font-semibold text-white mb-2">
+                              {cert.title}
+                            </h4>
+                            <p className={`${cert.color} mb-2`}>
+                              {cert.issuer} • {cert.date}
+                            </p>
+                            <p className="text-slate-300 mb-4">
+                              {cert.description}
+                            </p>
+                          </div>
+                          <button
+                            onClick={() => setSelectedCertificate(cert)}
+                            className="ml-4 flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-orange-600 text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
+                          >
+                            <Eye size={16} />
+                            View Certificate
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
 
+              {/* ✅ Right Column - Internships & Certifications */}
               <div>
                 <h3 className="text-3xl font-bold text-white mb-6">
                   Internship & Certifications
                 </h3>
                 <div className="space-y-6">
+                  {/* Internship block */}
                   <div className="bg-slate-700/50 p-6 rounded-lg border border-slate-600/50">
                     <div className="flex justify-between items-start">
                       <div className="flex-1">
@@ -509,22 +1312,17 @@ const AboutPage = () => {
                         <p className="text-slate-300 mb-4">
                           Contributed to Stirling PDF by developing new features
                           and deploying it on ONGC’s internal systems and
-                          network using Docker and Windows environments, while
-                          creating installation workflows and technical
-                          documentation to improve operational efficiency.
+                          network using Docker and Windows environments.
                         </p>
                       </div>
                       <button
                         onClick={() =>
                           setSelectedCertificate({
-                            title: 'Bachelor of Computer Science',
-                            issuer: 'University Name',
-                            date: '2019',
-                            description:
-                              'Graduated with honors, specializing in software engineering and web technologies.',
+                            title: 'Software Development Intern',
+                            issuer: 'ONGC',
+                            date: '2024',
                             certificateUrl:
                               'https://drive.google.com/file/d/1OvvviE4uTdAMm25WWxAjID0i2h7Td00I/view?usp=drivesdk',
-                            image: '',
                           })
                         }
                         className="ml-4 flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-orange-600 text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
@@ -535,7 +1333,7 @@ const AboutPage = () => {
                     </div>
                   </div>
 
-                  {/* Certifications */}
+                  {/* Job Simulations & Certificates */}
                   {certificates.map((cert) => (
                     <div
                       key={cert.id}
@@ -574,7 +1372,7 @@ const AboutPage = () => {
       {selectedCertificate && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
-            {/* Modal Header */}
+            {/* Header */}
             <div className="bg-slate-800 p-4 flex justify-between items-center">
               <h3 className="text-xl font-semibold text-white">
                 {selectedCertificate.title}
@@ -587,7 +1385,7 @@ const AboutPage = () => {
               </button>
             </div>
 
-            {/* Certificate Display */}
+            {/* Certificate iframe */}
             <div className="p-4 bg-gray-50 h-[75vh]">
               <iframe
                 src={getEmbedUrl(selectedCertificate.certificateUrl)}
@@ -597,15 +1395,17 @@ const AboutPage = () => {
               />
             </div>
 
-            {/* Modal Footer */}
+            {/* Footer */}
             <div className="bg-slate-800 p-4 flex justify-center">
-              <button
-                onClick={() => handleDownloadCertificate(selectedCertificate)}
+              <a
+                href={selectedCertificate.certificateUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-orange-600 text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
               >
                 <Download size={18} />
                 Download Certificate
-              </button>
+              </a>
             </div>
           </div>
         </div>
