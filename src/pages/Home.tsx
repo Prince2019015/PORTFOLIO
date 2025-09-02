@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useCVDownloadTracking } from '../hooks/useCVDownloadTracking';
 import {
   ArrowRight,
   Download,
@@ -11,7 +12,9 @@ import {
 
 const Home = () => {
   const [currentTitleIndex, setCurrentTitleIndex] = React.useState(0);
+  const { trackCVDownload } = useCVDownloadTracking();
   const jobTitles = [
+    'Software Engineer',
     'Full Stack Developer',
     'DevOps Engineer',
     'Web Developer',
@@ -24,6 +27,12 @@ const Home = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  const handleCVDownload = async () => {
+    // Track the download for email notification
+    await trackCVDownload('Home Page');
+    // The actual download will be handled by the Google Drive link
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center px-4">
@@ -62,13 +71,17 @@ const Home = () => {
               View My Work
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
-
-            <button className="inline-flex items-center px-8 py-4 border-2 border-slate-600 text-slate-300 font-semibold rounded-full hover:border-purple-500 hover:text-white transition-all duration-300 hover:scale-105">
+            <a
+              href="https://drive.google.com/file/d/1f4bB1DLV4HHcAvUiw8QVy5bo0_OK1aEn/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleCVDownload}
+              className="inline-flex items-center px-8 py-4 border-2 border-slate-600 text-slate-300 font-semibold rounded-full hover:border-purple-500 hover:text-white transition-all duration-300 hover:scale-105"
+            >
               <Download className="mr-2 w-5 h-5" />
               Download CV
-            </button>
+            </a>
           </div>
-
           {/* Social Links */}
           <div className="flex space-x-6">
             {[
@@ -108,7 +121,7 @@ const Home = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full p-1">
                 <div className="w-full h-full bg-slate-900 rounded-full overflow-hidden">
                   <img
-                    src="mypic3.jpeg"
+                    src="https://i.ibb.co/0jscs0mR/mypic3.jpg"
                     alt="Prince Kumar - Full Stack Developer"
                     className="w-full h-full object-cover"
                   />

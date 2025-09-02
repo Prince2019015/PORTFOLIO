@@ -95,7 +95,7 @@ const About = () => {
               <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-gradient-to-r from-purple-500 to-orange-500 p-1 bg-gradient-to-r from-purple-500 to-orange-500">
                 <div className="w-full h-full rounded-full overflow-hidden bg-slate-800 flex items-center justify-center">
                   <img
-                    src="aboutpic1.jpeg"
+                    src="https://i.ibb.co/MynrsXZY/aboutpic1.jpg"
                     alt="Profile"
                     className="w-full h-full object-cover"
                   />

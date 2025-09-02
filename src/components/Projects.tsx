@@ -29,7 +29,7 @@ const Projects = () => {
       title: 'Government Exam Portal',
       description:
         'A **Full Stack EdTech platform** for UPSC/SSC exam preparation with mock tests, CBT system, and structured question banks.',
-      image: 'government.png',
+      image: 'https://i.ibb.co/FbjHYmYY/governmentportal.jpg',
       technologies: [
         'HTML',
         'CSS',
@@ -47,7 +47,7 @@ const Projects = () => {
       title: 'E-Commerce Platform',
       description:
         'A full-stack e-commerce solution with React, Node.js, Express.js and MongoDB. Features include user authentication, payment processing, and admin dashboard.',
-      image: 'e-commerce.png',
+      image: 'https://i.ibb.co/gCh74tn/ecommerce.jpg',
       technologies: [
         'HTML',
         'CSS',
@@ -67,7 +67,7 @@ const Projects = () => {
       title: 'Smartpath : Learning Management System ',
       description:
         'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: 'smartpath.png',
+      image: 'https://i.ibb.co/sJ515snW/smartpath.jpg',
       technologies: [
         'HTML',
         'CSS',
@@ -86,7 +86,7 @@ const Projects = () => {
       title: 'Forecast-daily-bike-rental-demand-using-time-series-models ',
       description:
         'A comprehensive analytics dashboard with data visualization, real-time charts, and customizable reporting features for business insights.',
-      image: 'dataanalysis.png',
+      image: 'https://i.ibb.co/hq2Xk5G/dataanalysis.jpg',
       technologies: ['R programming'],
       github:
         'https://github.com/Prince2019015/Forecast-daily-bike-rental-demand-using-time-series-models',
@@ -98,7 +98,7 @@ const Projects = () => {
       title: 'Quiz Application',
       description:
         'A RESTful API for a social media platform with authentication, post management, real-time messaging, and content moderation.',
-      image: 'quizapp.png',
+      image: 'https://i.ibb.co/Q3HRZsqS/quizapp.jpg',
       technologies: [
         'HTML',
         'CSS',
@@ -116,7 +116,7 @@ const Projects = () => {
       title: 'Food Ordering Application Prototype',
       description:
         'A cross-platform mobile app for fitness tracking with workout plans, progress analytics, and social features for motivation.',
-      image: 'foodapp.jpeg',
+      image: 'https://i.ibb.co/Lh2Rkh6h/foodapp.jpg',
       technologies: ['Adobe XD'],
       github:
         'https://xd.adobe.com/view/80a37684-42d0-4a83-a427-65206b91ac2a-d5f0/',
